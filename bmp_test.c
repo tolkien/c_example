@@ -11,7 +11,7 @@ void _clean_up(FILE *fp, BMPImage *image, char **error);
 int main(void)
 {
     char *error = NULL;
-    BMPImage *image = read_image("6x6_24bit.bmp", &error);
+    BMPImage *image = read_image("160x160_24bit.bmp", &error);
     write_image("copy.bmp", image, &error);
     BMPImage *crop_image = crop_bmp(image, 2, 3, 4, 2, &error);
     write_image("crop.bmp", crop_image, &error);
