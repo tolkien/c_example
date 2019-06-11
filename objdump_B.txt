@@ -1,0 +1,30 @@
+objcopy --input-format binary \
+	--output-target i386-pc-linux-gnu \
+	--binary-architecture i386 \
+	timer_create a.out
+readelf -s a.out
+readelf -s timer_create
+
+man objcopy
+exit 0
+       -B bfdarch
+       --binary-architecture=bfdarch
+           Useful when transforming a architecture-less input file into an
+           object file.  In this case the output architecture can be set to
+           bfdarch.  This option will be ignored if the input file has a known
+           bfdarch.  You can access this binary data inside a program by
+           referencing the special symbols that are created by the conversion
+           process.  These symbols are called _binary_objfile_start,
+           _binary_objfile_end and _binary_objfile_size.  e.g. you can
+           transform a picture file into an object file and then access it in
+           your code using these symbols.
+
+yjoh@SEL-YJOH-D1:c_example$ readelf -s a.out 
+
+Symbol table '.symtab' contains 5 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     2: 00000000     0 NOTYPE  GLOBAL DEFAULT    1 _binary_timer_create_star
+     3: 000035b3     0 NOTYPE  GLOBAL DEFAULT    1 _binary_timer_create_end
+     4: 000035b3     0 NOTYPE  GLOBAL DEFAULT  ABS _binary_timer_create_size

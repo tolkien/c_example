@@ -1,5 +1,6 @@
 CXXFLAGS += -std=c++11
 #LDFLAGS += -lrt
+h2bin_obj=h2bin.o bmp.o
 
 all:
 
@@ -9,3 +10,6 @@ clean:
 
 timer_create: timer_create.c
 	gcc -o $@ $< -lrt
+
+h2bin: $(h2bin_obj)
+	gcc -o $@ $(h2bin_obj)
