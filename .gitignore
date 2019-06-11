@@ -1,0 +1,11 @@
+.gitignore
+copy.bmp
+crop.bmp
+h2bin
+a.out
+*.o
+
+# emacs' temporary files
+*~
+\#*\#
+\.#*
