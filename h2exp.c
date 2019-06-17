@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "leftImage.h"
+#include "image.h"
+#include "leftImage.inl"
 
 #undef _DEBUG_VERBOSE
 
